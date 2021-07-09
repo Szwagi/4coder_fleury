@@ -97,3 +97,4 @@ f4_poscontext_draw_at_bottom_of_buffer = true;
 f4_disable_poscontext = true;
 f4_disable_cursor_token_occurance = true;
 f4_disable_cursor_mark_range = true;
+f4_use_4coder_style_cursor = true;

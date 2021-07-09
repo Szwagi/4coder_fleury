@@ -214,7 +214,14 @@ F4_RenderBuffer(Application_Links *app, View_ID view_id, Face_ID face_id,
     {
         case FCoderMode_Original:
         {
-            F4_Cursor_RenderEmacsStyle(app, view_id, is_active_view, buffer, text_layout_id, cursor_roundness, mark_thickness, frame_info);
+            if (def_get_config_b32(vars_save_string_lit("f4_use_4coder_style_cursor")))
+            {
+                F4_Cursor_Render4CoderStyle(app, view_id, is_active_view, buffer, text_layout_id, cursor_roundness, mark_thickness, frame_info);
+            }
+            else
+            {
+                F4_Cursor_RenderEmacsStyle(app, view_id, is_active_view, buffer, text_layout_id, cursor_roundness, mark_thickness, frame_info);
+            }
         }break;
         
         case FCoderMode_NotepadLike:

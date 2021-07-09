@@ -135,6 +135,46 @@ DoTheCursorInterpolation(Application_Links *app, Frame_Info frame_info,
 }
 
 function void
+F4_Cursor_Render4CoderStyle(Application_Links *app, View_ID view_id, b32 is_active_view,
+                            Buffer_ID buffer, Text_Layout_ID text_layout_id,
+                            f32 roundness, f32 outline_thickness, Frame_Info frame_info)
+{
+    // NOTE(szwagi): This cursor doesn't support cursor trails.
+    
+    b32 has_highlight_range = draw_highlight_range(app, view_id, buffer, text_layout_id, roundness);
+    if (!has_highlight_range){
+        i32 cursor_sub_id = default_cursor_sub_id();
+        
+        i64 cursor_pos = view_get_cursor_pos(app, view_id);
+        i64 mark_pos = view_get_mark_pos(app, view_id);
+        global_cursor_positions[0] = cursor_pos;
+        global_mark_positions[0] = mark_pos;
+        
+        // NOTE(szwagi): We need to do this for intellisense stuff.
+        global_cursor_rect = text_layout_character_on_screen(app, text_layout_id, cursor_pos);
+        global_last_cursor_rect = global_cursor_rect;
+        
+        if (is_active_view){
+            draw_character_block(app, text_layout_id, cursor_pos, roundness,
+                                 fcolor_id(defcolor_cursor, cursor_sub_id));
+            paint_text_color_pos(app, text_layout_id, cursor_pos,
+                                 fcolor_id(defcolor_at_cursor));
+            draw_character_wire_frame(app, text_layout_id, mark_pos,
+                                      roundness, outline_thickness,
+                                      fcolor_id(defcolor_mark));
+        }
+        else{
+            draw_character_wire_frame(app, text_layout_id, mark_pos,
+                                      roundness, outline_thickness,
+                                      fcolor_id(defcolor_mark));
+            draw_character_wire_frame(app, text_layout_id, cursor_pos,
+                                      roundness, outline_thickness,
+                                      fcolor_id(defcolor_cursor, cursor_sub_id));
+        }
+    }
+}
+
+function void
 F4_Cursor_RenderEmacsStyle(Application_Links *app, View_ID view_id, b32 is_active_view,
                            Buffer_ID buffer, Text_Layout_ID text_layout_id,
                            f32 roundness, f32 outline_thickness, Frame_Info frame_info)
