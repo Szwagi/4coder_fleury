@@ -197,7 +197,10 @@ F4_RenderBuffer(Application_Links *app, View_ID view_id, Face_ID face_id,
     // NOTE(rjf): Cursor Mark Range
     if(is_active_view && fcoder_mode == FCoderMode_Original)
     {
-        F4_HighlightCursorMarkRange(app, view_id);
+        if (!def_get_config_b32(vars_save_string_lit("f4_disable_cursor_mark_range")))
+        {
+            F4_HighlightCursorMarkRange(app, view_id);
+        }
     }
     
     // NOTE(allen): Cursor shape
