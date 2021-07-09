@@ -1,4 +1,3 @@
-
 //~ NOTE(rjf): @f4_base_commands
 
 // TODO(rjf): Remove once Allen adds official version.
@@ -89,12 +88,34 @@ CUSTOM_DOC("Expand the compilation window.")
     Face_Metrics metrics = get_face_metrics(app, face_id);
     if(global_compilation_view_expanded ^= 1)
     {
-        view_set_split_pixel_size(app, global_compilation_view, (i32)(metrics.line_height*32.f));
+        view_set_split_pixel_size(app, global_compilation_view, (i32)(metrics.line_height*20.f));
     }
     else
     {
-        view_set_split_pixel_size(app, global_compilation_view, (i32)(metrics.line_height*4.f));
+        view_set_split_pixel_size(app, global_compilation_view, (i32)(metrics.line_height*0.f));
     }
+}
+
+CUSTOM_COMMAND_SIG(f4_open_compilation_expand)
+CUSTOM_DOC("Opens the compilation window.")
+{
+    Buffer_ID buffer = view_get_buffer(app, global_compilation_view, Access_Always);
+    Face_ID face_id = get_face_id(app, buffer);
+    Face_Metrics metrics = get_face_metrics(app, face_id);
+
+	global_compilation_view_expanded = 1;
+	view_set_split_pixel_size(app, global_compilation_view, (i32)(metrics.line_height*20.f));
+}
+
+CUSTOM_COMMAND_SIG(f4_close_compilation_expand)
+CUSTOM_DOC("Closes the compilation window.")
+{
+    Buffer_ID buffer = view_get_buffer(app, global_compilation_view, Access_Always);
+    Face_ID face_id = get_face_id(app, buffer);
+    Face_Metrics metrics = get_face_metrics(app, face_id);
+
+	global_compilation_view_expanded = 0;
+	view_set_split_pixel_size(app, global_compilation_view, (i32)(metrics.line_height*0.f));
 }
 
 internal void
@@ -1692,6 +1713,13 @@ CUSTOM_DOC("Counts the lines of code in the current buffer, breaks it down by se
             write_successful = write_successful;
         }
     }
+}
+
+CUSTOM_COMMAND_SIG(f4_project_fkey_command)
+CUSTOM_DOC("Open the compilation window, then run an 'fkey command' configured in a project.4coder file.  Determines the index of the 'fkey command' by which function key or numeric key was pressed to trigger the command.")
+{
+	f4_open_compilation_expand(app);
+	project_fkey_command(app);
 }
 
 //~ NOTE(rjf): Deprecated names:

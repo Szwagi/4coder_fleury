@@ -6,11 +6,12 @@ F4_DrawTooltipRect(Application_Links *app, Rect_f32 rect)
     ARGB_Color background_color = fcolor_resolve(fcolor_id(defcolor_back));
     ARGB_Color border_color = fcolor_resolve(fcolor_id(defcolor_margin_active));
     
-    background_color &= 0x00ffffff;
-    background_color |= 0xd0000000;
-    
-    border_color &= 0x00ffffff;
-    border_color |= 0xd0000000;
+	u64 f4_tooltip_alpha = def_get_config_u64(app, vars_save_string_lit("f4_tooltip_alpha"));
+
+	background_color &= 0x00ffffff;
+	background_color |= (f4_tooltip_alpha & 0xFF) << 24;
+	border_color &= 0x00ffffff;
+	border_color |= (f4_tooltip_alpha & 0xFF) << 24;
     
     draw_rectangle(app, rect, 4.f, background_color);
     draw_rectangle_outline(app, rect, 4.f, 3.f, border_color);

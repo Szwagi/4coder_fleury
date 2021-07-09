@@ -150,7 +150,7 @@ F4_Cursor_Render4CoderStyle(Application_Links *app, View_ID view_id, b32 is_acti
         global_cursor_positions[0] = cursor_pos;
         global_mark_positions[0] = mark_pos;
         
-        // NOTE(szwagi): We need to do this for intellisense stuff.
+        // NOTE(szwagi): We need to do this for tooltip stuff.
         global_cursor_rect = text_layout_character_on_screen(app, text_layout_id, cursor_pos);
         global_last_cursor_rect = global_cursor_rect;
         

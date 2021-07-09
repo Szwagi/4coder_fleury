@@ -504,6 +504,7 @@ void custom_layer_init(Application_Links *app)
     }
 }
 
+
 //~ NOTE(rjf): @f4_startup Whenever 4coder's core is ready for the custom layer to start up,
 // this is called.
 
