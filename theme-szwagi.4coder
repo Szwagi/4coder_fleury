@@ -1,0 +1,74 @@
+
+defcolor_back = 0xFF161f24;
+defcolor_margin = 0xFF181818;
+defcolor_margin_hover = 0xFF252525;
+defcolor_margin_active = 0xFF323232;
+defcolor_list_item = {defcolor_margin, defcolor_back};
+defcolor_list_item_hover = {defcolor_margin_hover, defcolor_margin};
+defcolor_list_item_active = {defcolor_margin_active, defcolor_margin_active};
+defcolor_cursor = {0xFF88DF93, 0xFF88DF93};
+defcolor_at_cursor = defcolor_back;
+defcolor_highlight_cursor_line = 0xFF1E1E1E;
+defcolor_highlight = 0xFFFF44DD;
+defcolor_mark = 0xFF494949;
+defcolor_text_default = 0xffc2c8cc;
+defcolor_at_highlight = 0xFFFF44DD;
+defcolor_comment = 0xFF2FCE2B;
+defcolor_comment_pop = {0xFF2FCE2B, 0xFF2FCE2B};
+defcolor_keyword = 0xFFFEFEFE;
+defcolor_str_constant = 0xFF6eb535;
+defcolor_char_constant = defcolor_str_constant;
+defcolor_int_constant = 0xff6ee364;
+defcolor_float_constant = defcolor_int_constant;
+defcolor_bool_constant = defcolor_int_constant;
+defcolor_include = defcolor_str_constant;
+defcolor_preproc = defcolor_text_default;
+defcolor_special_character = 0xFFFF0000;
+defcolor_ghost_character = 0xFF4E5E46;
+
+defcolor_paste = 0xFFDDEE00;
+
+defcolor_undo = 0xFF00DDEE;
+
+defcolor_highlight_junk = 0xff3a0000;
+defcolor_highlight_white = 0xff003a3a;
+
+defcolor_bar = 0xFF888888;
+defcolor_bar_active = 0xFF666666;
+defcolor_base = 0xFF000000;
+defcolor_pop1 = 0xFF3C57DC;
+defcolor_pop2 = 0xFFFF0000;
+
+defcolor_back_cycle = {defcolor_back};
+defcolor_text_cycle = { 0xFF72797d, 0xffa1b04c, 0xff5880bf, 0xffb051bd };
+
+defcolor_line_numbers_back = 0xFF101010;
+defcolor_line_numbers_text = 0xFF404040;
+
+fleury_color_syntax_crap           = 0xFF72797d;
+fleury_color_operators             = 0xFFa19b7d;
+fleury_color_inactive_pane_overlay = 0x45000000;
+fleury_color_inactive_pane_background = 0xFF161f24;
+fleury_color_file_progress_bar     = 0x70444d52;
+fleury_color_brace_highlight       = { 0xffcecece };
+fleury_color_brace_line            = { 0x809ba290 };
+fleury_color_brace_annotation      = { 0xffa1b04c, 0xff5880bf, 0xffb051bd };
+fleury_color_index_product_type    = 0xFFebd938;
+fleury_color_index_sum_type        = 0xFFebd938;
+fleury_color_index_function        = 0xFFcf5555;
+fleury_color_index_macro           = 0xFFba4acf;
+fleury_color_index_constant        = 0xff4db2c4;
+fleury_color_index_comment_tag     = 0xffffae00;
+fleury_color_index_decl            = 0xffd1c894;
+fleury_color_cursor_macro          = 0xffde2368;
+fleury_color_cursor_power_mode     = 0xffefaf2f;
+fleury_color_cursor_inactive       = 0xFF880000;
+fleury_color_plot_cycle            = { 0xff03d3fc, 0xff22b80b, 0xfff0bb0c, 0xfff0500c };
+fleury_color_token_highlight       = 0x26ffffff;
+fleury_color_token_minor_highlight = 0x26ffffff;
+fleury_color_error_annotation      = 0xffff0000;
+fleury_color_lego_grab             = 0xffefaf6f;
+fleury_color_lego_splat            = 0xffefaaef;
+fleury_color_comment_user_name     = 0xffffdd00;
+
+

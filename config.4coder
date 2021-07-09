@@ -61,7 +61,7 @@ indent_width = 4;
 default_tab_width = 4;
 
 // Theme
-default_theme_name = "theme-jonblow";
+default_theme_name = "theme-szwagi";
 
 // Font
 default_font_name = "liberation-mono.ttf";
@@ -86,15 +86,16 @@ default_compiler_sh = "g++";
 default_flags_sh  = "-g";
 
 f4_disable_cursor_trails = true;
-f4_disable_brace_highlight = true;
+f4_disable_brace_highlight = false;
 f4_disable_close_brace_annotation = true;
 f4_disable_brace_lines = true;
-f4_disable_progress_bar = true;
-f4_disable_divider_comments = true;
-f4_disable_error_annotations = true;
+f4_disable_progress_bar = false;
+f4_disable_divider_comments = false;
+f4_disable_error_annotations = false;
 f4_disable_calc_comments = true;
-f4_poscontext_draw_at_bottom_of_buffer = true;
-f4_disable_poscontext = true;
-f4_disable_cursor_token_occurance = true;
+f4_disable_poscontext = false;
+f4_disable_cursor_token_occurance = false;
 f4_disable_cursor_mark_range = true;
 f4_use_4coder_style_cursor = true;
+f4_poscontext_draw_at_bottom_of_buffer = true;
+f4_tooltip_alpha = 255;

@@ -246,7 +246,7 @@ F4_Brace_RenderLines(Application_Links *app, Buffer_ID buffer, View_ID view,
         
         float x_offset = view_get_screen_rect(app, view).x0 + 4 -
             view_get_buffer_scroll(app, view).position.pixel_shift.x +
-            (line_number_rect.x1 - line_number_rect.x0);
+        (line_number_rect.x1 - line_number_rect.x0);
         float x_position = 0.f;
         
         u64 vw_indent = def_get_config_u64(app, vars_save_string_lit("virtual_whitespace_regular_indent"));
