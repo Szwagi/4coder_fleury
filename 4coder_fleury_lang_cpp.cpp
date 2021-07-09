@@ -319,6 +319,13 @@ internal F4_LANGUAGE_INDEXFILE(F4_CPP_IndexFile)
             }
         }
         
+		//~ NOTE(szwagi): Using
+		else if(F4_Index_ParsePattern(ctx, "%t%k", "using", TokenBaseKind_Identifier, &name))
+		{
+			handled = 1;
+			F4_Index_MakeNote(ctx, Ii64(name), F4_Index_NoteKind_Type, F4_Index_NoteFlag_SumType);
+		}
+
         //~ NOTE(rjf): Pure Typedefs
         else if(F4_Index_ParsePattern(ctx, "%t", "typedef"))
         {
@@ -406,7 +413,7 @@ internal F4_LANGUAGE_INDEXFILE(F4_CPP_IndexFile)
                 F4_Index_MakeNote(ctx, Ii64(name), F4_Index_NoteKind_Function, prototype ? F4_Index_NoteFlag_ProductType : 0);
             }
         }
-        
+
         //~ NOTE(rjf): Declarations
         else if(scope_nest == 0 && F4_CPP_ParseDecl(ctx, &name))
         {
