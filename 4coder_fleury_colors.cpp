@@ -167,7 +167,7 @@ F4_GetColor(Application_Links *app, ColorCtx ctx)
                             FillFromFlag(F4_SyntaxFlag_Functions);
                             color = F4_ARGBFromID(table, fleury_color_index_function);
                         }break;
-                        
+
                         case F4_Index_NoteKind_Constant:
                         {
                             FillFromFlag(F4_SyntaxFlag_Constants);

@@ -22,7 +22,7 @@ enum
 {
     F4_Index_NoteFlag_Prototype   = (1<<0),
     F4_Index_NoteFlag_ProductType = (1<<1),
-    F4_Index_NoteFlag_SumType     = (1<<2),
+    F4_Index_NoteFlag_SumType     = (1<<2)
 };
 
 struct F4_Index_File;

@@ -607,7 +607,7 @@ CUSTOM_DOC("Fleury startup event")
             Buffer_ID buffer = view_get_buffer(app, compilation_view, Access_Always);
             Face_ID face_id = get_face_id(app, buffer);
             Face_Metrics metrics = get_face_metrics(app, face_id);
-            view_set_split_pixel_size(app, compilation_view, (i32)(metrics.line_height*4.f));
+            view_set_split_pixel_size(app, compilation_view, (i32)(metrics.line_height*0.f));
             view_set_passive(app, compilation_view, true);
             global_compilation_view = compilation_view;
             view_set_buffer(app, compilation_view, comp_id, 0);

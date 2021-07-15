@@ -6,8 +6,11 @@
 // NOTE(rjf): Include language files here.
 #include "generated/4coder_fleury_lexer_jai.h"
 #include "generated/4coder_fleury_lexer_jai.cpp"
+#include "generated/4coder_fleury_lexer_sp.h"
+#include "generated/4coder_fleury_lexer_sp.cpp"
 #include "4coder_fleury_lang_cpp.cpp"
 #include "4coder_fleury_lang_jai.cpp"
+#include "4coder_fleury_lang_sp.cpp"
 #include "4coder_fleury_lang_metadesk.cpp"
 
 // NOTE(rjf): @f4_register_languages Register languages.
@@ -42,6 +45,23 @@ F4_RegisterLanguages(void)
                             F4_Jai_PosContext,
                             F4_Jai_Highlight,
                             Lex_State_Jai);
+    }
+
+    // NOTE(szwagi): SourcePawn
+    {
+        String_Const_u8 extensions[] =
+        {
+            S8Lit("sp"), S8Lit("inc")
+        };
+        for(int i = 0; i < ArrayCount(extensions); i += 1){
+            F4_RegisterLanguage(extensions[i],
+                                F4_SP_IndexFile,
+                                lex_full_input_sp_init,
+                                lex_full_input_sp_breaks,
+                                F4_SP_PosContext,
+                                F4_SP_Highlight,
+                                Lex_State_Sp);
+        }
     }
     
     // NOTE(rjf): Metadesk

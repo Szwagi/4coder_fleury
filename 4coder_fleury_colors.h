@@ -14,6 +14,7 @@ CUSTOM_ID(colors, fleury_color_brace_annotation);
 CUSTOM_ID(colors, fleury_color_index_sum_type);
 CUSTOM_ID(colors, fleury_color_index_product_type);
 CUSTOM_ID(colors, fleury_color_index_function);
+CUSTOM_ID(colors, fleury_color_index_sp_forward);
 CUSTOM_ID(colors, fleury_color_index_macro);
 CUSTOM_ID(colors, fleury_color_index_constant);
 CUSTOM_ID(colors, fleury_color_index_comment_tag);
