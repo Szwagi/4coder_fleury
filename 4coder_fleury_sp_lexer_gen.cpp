@@ -195,6 +195,7 @@ build_language_model(void){
     sm_key("native");
     sm_key("forward");
     sm_key("function");
+    sm_key("stock");
 
     sm_select_base_kind(TokenBaseKind_LiteralInteger);
     sm_key("LiteralTrue", "true");

@@ -15,7 +15,7 @@ keys_global = {
 	{ "f4_close_compilation_expand", "F6" },
 	{ "f4_project_fkey_command", "F7" },
 	{ "f4_project_fkey_command", "F8" },
-	{ "exit_4coder",          "F4", "Alt" }
+	{ "exit_4coder",          "F4", "Alt" },
 };
 
 keys_file = {
@@ -50,6 +50,6 @@ keys_file = {
 
 keys_code = {
 	{ "jump_to_last_point", "F11" },
-    { "jump_to_definition_at_cursor", "F12" },
+    { "f4_go_to_definition_same_panel", "F12" },
 };
 
