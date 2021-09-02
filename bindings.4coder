@@ -49,6 +49,7 @@ keys_file = {
 };
 
 keys_code = {
+	{ "f4_autocomplete_or_indent", "Tab" },
 	{ "jump_to_last_point", "F11" },
     { "f4_go_to_definition_same_panel", "F12" },
 };
